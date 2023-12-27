@@ -1,0 +1,22 @@
+{
+  "name": "@kaushik-xs/entity-blocks",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kaushik-xs/entity-blocks.git"
+  },
+  "author": "Kaushik Sundar",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/kaushik-xs/entity-blocks/issues"
+  },
+  "homepage": "https://github.com/kaushik-xs/entity-blocks#readme",
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com/kaushik-xs"
+  }
+}
