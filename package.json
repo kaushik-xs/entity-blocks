@@ -1,5 +1,5 @@
 {
-  "name": "@kaushik-xs/entity-blocks",
+  "name": "entity-blocks",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
@@ -17,6 +17,15 @@
   },
   "homepage": "https://github.com/kaushik-xs/entity-blocks#readme",
   "publishConfig": {
-    "registry": "https://npm.pkg.github.com/kaushik-xs"
+    "registry": "https://registry.npmjs.org"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.10.5",
+    "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "express": "^4.18.2",
+    "pg": "^8.11.3"
   }
 }
