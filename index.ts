@@ -1,8 +1,8 @@
-// var dbConnection = require("./src/config/db");
+var dbConnection = require("./src/config/db");
 
 var healthRouter = require("./src/essential/healthRouter");
 
 module.exports = {
-  // dbConnection,
+  dbConnection,
   healthRouter,
 };

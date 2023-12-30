@@ -1,8 +1,8 @@
 name: Publish entity-blocks
 on:
-  workflow_dispatch:
-
-
+  push:
+    branches:
+      - 'master'
 env:
   GITHUB_SHA: ${{ github.sha }}
   NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
