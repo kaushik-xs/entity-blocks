@@ -1,0 +1,32 @@
+name: Publish entity-blocks
+on:
+  workflow_dispatch:
+
+
+env:
+  GITHUB_SHA: ${{ github.sha }}
+  NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+
+jobs:
+  setup-build-publish:
+    name: Publish
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Use Node.js 16
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16
+          cache: "npm"
+      - name: NPM Clean Install,Build & Release
+        run: |
+          npm ci
+          npm run build --if-present
+      - name: Create NPMRC
+        run: |
+          echo "@kaushik-xs:registry=https://registry.npmjs.org" > .npmrc
+          echo "//registry.npmjs.org/:_authToken=$NPM_TOKEN" > .npmrc
+      - name: Publish Version
+        run: |
+          npm publish

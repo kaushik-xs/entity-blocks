@@ -1,13 +1,10 @@
 // Update multiple buisiness entities in the same payload
-import express, { Express, Request, Response, NextFunction } from "express";
+var express = require("express");
 var router = express.Router();
 0;
 /* GET home page. */
-router.get(
-  "/health_check",
-  function (req: Request, res: Response, next: NextFunction) {
-    res.send("The service is up");
-  }
-);
+router.get("/health_check", function (req: any, res: any, next: any) {
+  res.send("The service is up");
+});
 
 module.exports = router;

@@ -1,11 +1,14 @@
-import { DB_TYPE_ENUM } from "../utils/types";
+enum DB_TYPE_ENUM {
+  MONGODB = "mongodb",
+  POSTGRESQL = "postgresql",
+}
 
 // Required libraries
 var mongoose = require("mongoose");
 var { Pool } = require("pg"); // PostgreSQL client
 
 // Environment variables
-const dbType: String | undefined = process.env.DB_TYPE; // 'mongodb' or 'postgresql'
+let dbType = process.env.DB_TYPE || DB_TYPE_ENUM.MONGODB;
 var dbURI = process.env.DB_CONNECTION_URL;
 
 var dbConnection: any;
@@ -58,4 +61,4 @@ process.on("SIGINT", function () {
   process.exit(0);
 });
 
-module.exports = dbConnection;
+export default dbConnection;
